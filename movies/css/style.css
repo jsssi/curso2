@@ -1,80 +1,96 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-:root{
-  font-size: 62.5%;
-}
-.text{
-  background: blue;
-
-  padding: 1.0rem;  
- 
-  height: 5.0rem;
-  width: 100%;
+  border: 0;
 }
 
-.caixa{
-  padding: 2.0rem;
+:root {
+  font-size: 62.2%;
+}
+
+body {
   display: flex;
   flex-direction: column;
   gap: 1.0rem;
-  
-  border: 1px solid black;
-  
-  height: 100%;
 }
-.cards{
+
+.text h1 {
+  margin-left: .4rem;
+  text-transform: uppercase;
+}
+
+.caixa {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1.0rem;
+
+  padding: .6rem;
 }
-.card{
+
+.caixa .formu {
   border: 1px solid black;
-
-  border-radius: .8rem;
-
-  width: fit-content;
-  height: fit-content;
-
-  cursor: pointer;
-
-  text-align: center;
- 
-}
-.card:hover{
-  transform: scale(1.01);
-  transition: all 800ms;
-  filter: opacity(.7);
-
-
-}
-.card h3 , img{
-  margin: 1.0rem .8rem ;
-  font-size: 2.6rem;
-}
-.formu{
   display: flex;
-  gap: 1.0rem;
+  align-items: center;
+  justify-content: space-between;
+
 }
-.formu #form{
+
+.caixa .formu input {
+  border: none;
   padding: 1.0rem;
+
+  width: 100%;
+}
+
+.formu #btn {
+  border: 1px solid red;
+  margin-right: 1.0rem;
+}
+
+.cards {
+  border: 1px solid red;
+
+
+
+  height: 100vh;
+}
+
+.cards .card {
+  border: 1px solid red;
+  width: fit-content;
+
+  display: flex;
+  padding: .5rem;
+  margin-bottom: 1.0rem;
+
   
-  border-radius: 1.0rem;
-   
-  width: 20%;
 }
-.formu #btn{
-  border-radius: .6rem;
 
-  cursor: pointer;
+.cards .card img {
+  height: 17.0rem;
+  width: 10.0rem;
+}
 
-  width: 8.0rem;
+.cards .card .filme {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 1.0rem;
+  
+
+  height: 50%;
+  
+
+  border: 1px solid red;
 }
-.formu #btn:hover{
-  transform: scale(1.1);
+
+.cards .card .filme h3 {
+  font-size: 1.8rem;
 }
-.formu #btn:active{
-   transform: scale(.8);
+
+.cards .card .filme p {
+
+  font-size: 1.4rem;
+
 }
