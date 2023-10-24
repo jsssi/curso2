@@ -8,25 +8,41 @@ const btn   = document.querySelector('#btn')
 btn.addEventListener('click',()=>{
   const pesquisa = input.value
   if(pesquisa==""){
-    alert("coloca algo ai fela da pulta");
+    const  modal = document.querySelector('.modal')
+    modal.classList.add('show-modal')
+    const remodal = document.querySelector('#btn-modal')
+    remodal.addEventListener('click',()=>{
+      modal.classList.remove('show-modal')
+      
+    })
   }
   const filme = input.value
-  fetch(`http://www.omdbapi.com/?s=${filme}&apikey=${key}`).then(result => result.json()).then(json => carregalista(json));
+  fetch(`http://www.omdbapi.com/?s=${filme}&apikey=${key}`)
+  .then(result => result.json())
+  .then(json => carregalista(json));
+   console.log(typeof result)
+ 
+  
   
 })
 const carregalista = (json) =>{
   const list = document.querySelector(".cards")
   list.innerHTML= "";
-  json.Search.forEach(element => {
-    console.log(element)
+  json.Search.forEach(element =>{
+      console.log(element)
+      
 
-    let item = document.createElement("div")
-    item.classList.add("card")
+      let item = document.createElement("div")
+      item.classList.add("card")
+      
+      item.innerHTML = `<img src="${element.Poster}"</img> <h3>${element.Title}</h3>`
+      list.appendChild(item);
+    
+   
 
-    item.innerHTML = `<img src="${element.Poster}"</img><h3>${element.Title}</h3><p>${element.overview}</p>`
-    list.appendChild(item)  
+   
 
   });
-
+ 
 
 }
